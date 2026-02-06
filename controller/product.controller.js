@@ -1,9 +1,6 @@
 import { v2 as cloudinary } from "cloudinary";
-import exp from "constants";
-import fs, { chmod } from "fs";
+import fs from "fs";
 import ProductModel from "../model/product.model.js";
-import { disconnect } from "process";
-import { error } from "console";
 import ProductRAMSModel from "../model/productRAMS.model.js";
 import ProductWeightModel from "../model/productWeight.model.js";
 import ProductSizeModel from "../model/productSize.model.js";
