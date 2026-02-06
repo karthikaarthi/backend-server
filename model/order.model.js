@@ -1,0 +1,66 @@
+import mongoose, { mongo } from "mongoose";
+
+const orderSchema = mongoose.Schema(
+  {
+    userId: {
+      type: mongoose.Schema.ObjectId,
+      ref: "User",
+    },
+    products: [
+      {
+        productId: {
+          type: String,
+        },
+        productTitle: {
+          type: String,
+        },
+        quantity: {
+          type: Number,
+        },
+        price: {
+          type: Number,
+        },
+        image:{
+            type: String
+        },
+        subTotal: {
+            type: Number
+        }
+      },
+    ],
+    
+
+  
+    paymentId: {
+      type: String,
+      default: "",
+    },
+    payment_status: {
+      type: String,
+      default: "",
+    },
+    orderStatus: {
+        type: String,
+        default:"pending"
+    },
+    delivery_address: {
+      type: mongoose.Schema.ObjectId,
+      ref: "address",
+    },
+    subTotalAmt: {
+      type: Number,
+      default: 0,
+    },
+    totalAmt: {
+      type: Number,
+      default: 0,
+    },
+    date:{
+        type:Date
+    }
+  },
+  { timestamps: true }
+);
+
+const OrderModel = mongoose.model("order", orderSchema);
+export default OrderModel;
