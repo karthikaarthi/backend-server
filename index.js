@@ -16,6 +16,9 @@ import orderRouter from './routes/order.route.js';
 
 const app = express()
 
+
+const PORT  = process.PORT || 8000
+
 dotenv.config();
 app.use(express.json());
 app.use(cookieParser())
